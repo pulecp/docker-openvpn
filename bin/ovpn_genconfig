@@ -330,6 +330,12 @@ keepalive $OVPN_KEEPALIVE
 persist-key
 persist-tun
 
+# Alpine
+#plugin /usr/lib/openvpn/plugins/openvpn-plugin-auth-pam.so openvpn
+# Ubuntu
+plugin /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so openvpn
+username-as-common-name
+
 proto $OVPN_PROTO
 # Rely on Docker to do port mapping, internally always 1194
 port 1194
